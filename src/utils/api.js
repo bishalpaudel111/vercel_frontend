@@ -8,7 +8,6 @@ const api = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
-// Attach admin token automatically to every request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("adminToken");
   if (token) {

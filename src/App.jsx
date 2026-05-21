@@ -103,34 +103,7 @@ useEffect(() => {
   };
   fetchRecommendations();
 }, [user, province]);
-
-
-
-  // useEffect(() => {
-  //   const fetchRecommendations = async () => {
-  //     if (!user || !province) {
-  //       setRecommendations([]);
-  //       return;
-  //     }
-  //     try {
-  //       const token = localStorage.getItem("token");
-  //       const res = await axios.get(`${BASE_URL}/api/order/recommendations`, {
-  //         headers: { Authorization: `Bearer ${token}` },
-  //         params: { userId: user._id, province }
-  //       });
-  //       setRecommendations(res.data.recommendations || []);
-  //     } catch (err) {
-  //       console.error("Failed to fetch recommendations:", err);
-  //       setRecommendations([]);
-  //     }
-  //   };
-  //   fetchRecommendations();
-  // }, [user, province]);
-
-
-
-
-  const addToCart = async (item) => {
+ const addToCart = async (item) => {
     if (!user) {
       navigate("/login");
       return;
